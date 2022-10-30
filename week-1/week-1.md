@@ -42,19 +42,19 @@ Hal itulah yang membuat React JS menjadi lebih cepat performancenya jika dibandi
    ```
 
    <br>
-   <img src="gambar-1.png">
+   <img src="./gambar/gambar-1.png">
 
    <br>
 
 4. Projek selesai dibuat setelah cmd memberitahukan _Happy Hacking!_
 
-   <img src="gambar-2.png">
+   <img src="./gambar/gambar-2.png">
 
    <br>
 
 5. Isi dari folder react
 
-   <img src="gambar-3.png">
+   <img src="./gambar/gambar-3.png">
 
     <br>
 
@@ -66,11 +66,11 @@ Hal itulah yang membuat React JS menjadi lebih cepat performancenya jika dibandi
 
    contohnya pada projek react yang telah kita buat sebelumnya.
 
-   <img src="gambar-5.png">
+   <img src="./gambar/gambar-5.png">
 
    Maka setelah menunggu beberapa saat, akan ada tab baru yang terbuka pada browser dan tampilan defaultnya akan terlihat seperti ini:
 
-   <img src="gambar-6.png">
+   <img src="./gambar/gambar-6.png">
 
 <br>
 
@@ -92,13 +92,13 @@ File _index.html_ ini akan secara otomatis memanggil file _index.js_ yang terdap
 
 Isi dari folder **src** :
 
-<img src="gambar-4.png">
+<img src="./gambar/gambar-4.png">
 
 <br>
 
 cuplikan file **index.js**
 
-<img src="gambar-7.png">
+<img src="./gambar/gambar-7.png">
 
 Dapat dilihat bahwa pada _index.js_, virtual DOM dibuat dan virtual DOM mengambil element id 'root' dari file _index.html_.
 
@@ -118,13 +118,13 @@ import diletakkan di bagian atas.
 
 Berikut code lengkap dari _index.js_
 
-<img src="gambar-8.png">
+<img src="./gambar/gambar-8.png">
 
 App adalah sebuah **component** pada React. Setiap component akan berekstensi _.js_.
 
 **src** > **App.js**
 
-<img src="gambar-9.png">
+<img src="./gambar/gambar-9.png">
 
 Pada _App.js_ akan mengexport _export default app_ agar App.js bisa diimport di _index.js_.
 Selain itu, _function App_ memiliki nilai **return**. Return hanya dapat memiliki satu element parent. Pada contoh di atas, element parent dibungkus di dalam tag <_div_>.
@@ -150,7 +150,7 @@ Jika diperhatikan, App.js merupakan file javascript. Akan tetapi di dalamnya mal
 
 Jika ingin membuat component yang lain, maka hal yang perlu dilakukan adalah dengan membuat folder **components** di dalam folder **src**.
 
-<img src="gambar-10.png">
+<img src="./gambar/gambar-10.png">
 
 Di dalam folder **components** kita dapat membuat banyak component, misalnya kita akan membuat _Home.js_. Nantinya _Home_ dapat diexport ke _App.js_.
 
@@ -186,7 +186,7 @@ Sedangkan, pada JSX caranya agak sedikit berbeda. Perhatikan contoh di bawah.
 
 Sekarang kita akan melihat contoh penggunaan component secara langsung. Kita akan membuat sebuah profile card seperti pada contoh gambar di bawah.
 
-<img src="gambar-11.png">
+<img src="./gambar/gambar-11.png">
 
 <br>
 codenya adalah sebagai berikut :
@@ -231,7 +231,7 @@ export default App;
 
 Karena _MemberInfo_ dipanggil 3 kali pada **App.js**, maka ketika dijalankan pada browser, profile cardnya akan muncul sebanyak 3 kali juga.
 
-<img src="gambar-12.png">
+<img src="./gambar/gambar-12.png">
 
 Code pada **App.js** hanya berjumlah 3 baris. Beda halnya jika pada Vanilla JS, biasanya kita akan mengcopy code profile card sebanyak 3 kali. Hal ini menyebabkan code menjadi panjang.
 
