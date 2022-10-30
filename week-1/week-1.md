@@ -245,43 +245,7 @@ State -> Data yang ada di dalam sebuah component.
 
 _props_ digunakan sebagai parameter pada file component yang dituju.
 
-**MemberInfo.js** sebelum diberikan atribut.
-
-```javascript
-function MemberInfo(props) /*letakkan props pada parameter*/ {
-  return (
-    <div className="profile-container">
-      <img src="https://i.pinimg.com/564x/0d/e0/c0/0de0c0721c576c0e9fbd79abd6668089.jpg" alt="" className="profile-image" />
-      <div className="profile-info">
-        <h1>Farrah</h1>
-        <h3>20 Tahun</h3>
-      </div>
-    </div>
-  );
-}
-```
-
-Kemudian berikan atribut pada baris code yang ingin ditampilkan.
-
-<br>
-
-**MemberInfo.jsx** sesudah diberikan atribut.
-
-```javascript
-function MemberInfo(props) /*letakkan props pada parameter*/ {
-  return (
-    <div className="profile-container">
-      <img src="https://i.pinimg.com/564x/0d/e0/c0/0de0c0721c576c0e9fbd79abd6668089.jpg" alt="" className="profile-image" />
-      <div className="profile-info">
-        <h1>{props.name}</h1> // name sebagai atribut
-        <h3>{props.age} Tahun</h3> // age sebagai atribut
-      </div>
-    </div>
-  );
-}
-```
-
-Kemudian pada **App.js** berikan atribut _name_ dan _age_ di dalam tag <_MemberInfo_ />
+Untuk lebih jelas perhatikan contoh di bawah.
 
 **App.js**
 
@@ -303,7 +267,45 @@ function App() {
 export default App;
 ```
 
-Atribut _name_ dan _age_ adalah **props**. Sedangkan nilai dari atributnya adalah **state**.
+atribut name={"askia"} dan age={"20"} semuanya merupakan **state**.
+
+State dari **App.js** akan dilemparkan menjadi **props** pada parameter **MemberInfo.jsx**
+
+**MemberInfo.js** sebelum diberikan props.
+
+```javascript
+function MemberInfo(props) /*letakkan props pada parameter*/ {
+  return (
+    <div className="profile-container">
+      <img src="https://i.pinimg.com/564x/0d/e0/c0/0de0c0721c576c0e9fbd79abd6668089.jpg" alt="" className="profile-image" />
+      <div className="profile-info">
+        <h1>Farrah</h1>
+        <h3>20 Tahun</h3>
+      </div>
+    </div>
+  );
+}
+```
+
+Kemudian berikan atribut pada baris code yang ingin ditampilkan.
+
+<br>
+
+**MemberInfo.jsx** sesudah diberikan props.
+
+```javascript
+function MemberInfo(props) /*letakkan props pada parameter*/ {
+  return (
+    <div className="profile-container">
+      <img src="https://i.pinimg.com/564x/0d/e0/c0/0de0c0721c576c0e9fbd79abd6668089.jpg" alt="" className="profile-image" />
+      <div className="profile-info">
+        <h1>{props.name}</h1>
+        <h3>{props.age} Tahun</h3>
+      </div>
+    </div>
+  );
+}
+```
 
 ### useState
 
@@ -372,3 +374,5 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 note: cara untuk menggunakan react biasa ini hanya bisa dipilih salah satu, tidak bisa keduanya.
 
 note: Apabila memilih untuk menggunakan Bootstrap biasa pada React, maka harus selalu ingat untuk mengganti nama atribut. Seperti atribut **class** harus ditulis menjadi **className**, dan lain-lain.
+
+## React Event
