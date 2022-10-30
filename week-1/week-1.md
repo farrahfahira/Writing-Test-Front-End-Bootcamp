@@ -376,3 +376,29 @@ note: cara untuk menggunakan react biasa ini hanya bisa dipilih salah satu, tida
 note: Apabila memilih untuk menggunakan Bootstrap biasa pada React, maka harus selalu ingat untuk mengganti nama atribut. Seperti atribut **class** harus ditulis menjadi **className**, dan lain-lain.
 
 ## React Event
+
+Cara menggunakan event pada React, adalah dengan menambahkannya langsung pada opening tag.
+
+```javascript
+return (
+  <>
+    <button onClick={tes}></button>
+  </>
+);
+```
+
+untuk _function_ nya bisa disisipkan sebelum return.
+
+```javascript
+function Component() {
+  const tes = () => {
+    // code
+  };
+
+  return (
+    <>
+      <button onClick={tes}></button>
+    </>
+  );
+}
+```
