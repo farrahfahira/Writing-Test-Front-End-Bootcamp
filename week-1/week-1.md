@@ -241,6 +241,8 @@ Ketiga card di atas masih memiliki data yang sama. Untuk itu, sekarang akan dije
 
 Props dan State adalah sebuah objek dalam Javascript yang digunakan untuk mengirim data.
 
+State -> Data yang ada di dalam sebuah component.
+
 _props_ digunakan sebagai parameter pada file component yang dituju.
 
 **MemberInfo.js** sebelum diberikan atribut.
