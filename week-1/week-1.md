@@ -1,4 +1,6 @@
-# React JS
+# Senin, 24 Oktober 2022
+
+## **React JS**
 
 React JS adalah library yang gunanya untuk membuat tampilan user interface website. React JS dapat mempermudah developer untuk memanipulasi tampilan, dan membuat event.
 
@@ -12,7 +14,7 @@ React JS bersifat:
 
 Maksud dari Component-based adalah misalnya ketika kita membuat sebuah komponen navbar, maka kita hanya perlu membuat navbar sekali saja, kemudian ketika akan menggunakannya di banyak page, komponen navbar bisa dipanggil. Jadi ketika ada perubahan pada navbar, tidak perlu merubah semua navbar yang ada di setiap page (seperti pada JS vanilla).
 
-## Single Page Application (SPA)
+### Single Page Application (SPA)
 
 Sebelumnya pada Traditional Web Application, ketika kita ingin membuat beberapa halaman seperti _home, about, contact_, maka setiap halaman harus dibuat file htmlnya menjadi _home.html, about.html, contact.html_.
 
@@ -30,7 +32,7 @@ Beda Virtual DOM dan Real DOM.
 
 Hal itulah yang membuat React JS menjadi lebih cepat performancenya jika dibandingkan dengan Vanilla JS (JS biasa).
 
-## Cara menggunakan React JS
+### Cara menggunakan React JS
 
 1. Mendownload Node.js terlebih dahulu
 2. Membuka cmd pada folder parent tempat di mana folder projek akan dibuat. contohnya di sini saya akan membuat sebuah projek baru pada folder week 1.
@@ -182,7 +184,9 @@ Sedangkan, pada JSX caranya agak sedikit berbeda. Perhatikan contoh di bawah.
 
 <br>
 
-## Lebih Banyak tentang Component..
+# Selasa, 25 Oktober 2022
+
+## **Components**
 
 Sekarang kita akan melihat contoh penggunaan component secara langsung. Kita akan membuat sebuah profile card seperti pada contoh gambar di bawah.
 
@@ -347,7 +351,7 @@ Stateles -> Tidak memiliki state.
 Pada contoh kasus project tadi, MemberInfo() adalah **stateless** karena hanya memiliki props.
 Sedangkan App() adalah **stateful** karena memiliki props dan state.
 
-## Menggunakan Bootstrap pada React
+### Menggunakan Bootstrap pada React
 
 - Menggunakan React Bootstrap
 - Menggunakan React Biasa
@@ -375,30 +379,120 @@ note: cara untuk menggunakan react biasa ini hanya bisa dipilih salah satu, tida
 
 note: Apabila memilih untuk menggunakan Bootstrap biasa pada React, maka harus selalu ingat untuk mengganti nama atribut. Seperti atribut **class** harus ditulis menjadi **className**, dan lain-lain.
 
-## React Event
+# Rabu, 26 Oktober 2022
 
-Cara menggunakan event pada React, adalah dengan menambahkannya langsung pada opening tag.
+### React Event
 
-```javascript
-return (
-  <>
-    <button onClick={tes}></button>
-  </>
-);
-```
-
-untuk _function_ nya bisa disisipkan sebelum return.
+**Counter.jsx** akan menjadi component sebuah tombol untuk menambah dan mengurangi suatu number.
 
 ```javascript
-function Component() {
-  const tes = () => {
-    // code
-  };
+function Counter() {
+  let count = 0;
 
   return (
     <>
-      <button onClick={tes}></button>
+      <button>-</button>
+      <span>{count}</span>
+      <button>+</button>
     </>
   );
 }
+
+export default Counter;
 ```
+
+<img src="./gambar/14.png">
+
+Kemudian **Counter.jsx** akan diimport ke **App.jsx** dan dipanggil functionnya di dalam return.
+
+**App.jsx**
+
+```javascript
+import Counter from "./Counter.jsx";
+
+function App() {
+  return (
+    <div>
+      <Counter />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Kita ingin agar ketika diklik tombol + maka angka 0 akan bertambah sebanyak +1 dan berubah nilainya menjadi 1. Apabila diklik lagi maka akan +1 lagi menjadi 2, dan seterusnya. Begitu juga hal yang sama apabila diklik tombol -
+
+Untuk itu, kita perlu menambahkan event onClick pada _button_ kemudian membuat sebuah function pada event onClick.
+
+Akan tetapi, variable pada JS bersifat _immutable_. Maka dari itu, hal ini bisa diakali dengan menggunakan **useState**.
+
+```javascript
+function Counter() {
+  // let count = 0;
+
+  const [count, setCount] = useState(0); //nilai awal count adalah 0, dan apabila ingin diganti nilai variable count haruslah dengan menggunakan method setCount
+
+  //function increment untuk menambah nilai count menjadi +1
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  //tambahkan event onClick = {increment} pada button +
+  return (
+    <>
+      <button>-</button>
+      <span>{count}</span>
+      <button onClick={increment}>+</button>
+    </>
+  );
+}
+
+export default Counter;
+```
+
+Kemudian untuk fungsi membuat nilai _count_ menjadi -1, kita dapat menambahkan event onClick juga pada button -
+
+Namun di sini kita tidak perlu membuat function baru (namun jika ingin tidak masalah juga). Kita ha
+
+```javascript
+function Counter() {
+  // let count = 0;
+
+  const [count, setCount] = useState(0); //nilai awal count adalah 0, dan apabila ingin diganti nilai variable count haruslah dengan menggunakan method setCount
+
+  //function increment untuk menambah nilai count menjadi +1
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  //tambahkan event onClick pada button minus, dan callback akan menjalankan function.
+  return (
+    <>
+      <button onClick={() => setCount(count - 1)}>-</button>
+      <span>{count}</span>
+      <button onClick={increment}>+</button>
+    </>
+  );
+}
+
+export default Counter;
+```
+
+### Menggunakan method array _.map_
+
+Jika ada sebuah component **ListUser.jsx**, di mana di dalamnya akan memanggil component lain, yaitu **Card.jsx**. Pada **ListUser.jsx**, kita ingin menampilkan banyak card dengan setiap card memiliki state (data) yang berbeda-beda. Dengan cara biasa, kita akan mengcopas pemanggilan component _Card_ sebanyak yang diinginkan kemudian mengganti nilai statenya.
+
+<img src="./gambar/15.png">
+
+Kita dapat menggunakan cara lain, yaitu dengan menggunakan useState untuk membuat sebuah variabel berbentuk array.
+
+<img src="./gambar/16.png">
+
+Setelah memiliki array, sekarang kita akan tampilkan data array tersebut menggunakan method _.map_.
+
+<img src="./gambar/17.png">
+
+### Penggunaan event onClick untuk men*hide* dan men-_show_ sebuah elemen
+
+<img src="./gambar/18.png">
