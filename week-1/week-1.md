@@ -311,6 +311,22 @@ function MemberInfo(props) /*letakkan props pada parameter*/ {
 }
 ```
 
+```javascript
+function MemberInfo({ name, age }) /*letakkan props pada parameter*/ {
+  return (
+    <div className="profile-container">
+      <img src="https://i.pinimg.com/564x/0d/e0/c0/0de0c0721c576c0e9fbd79abd6668089.jpg" alt="" className="profile-image" />
+      <div className="profile-info">
+        <h1>{name}</h1>
+        <h3>{age} Tahun</h3>
+      </div>
+    </div>
+  );
+}
+```
+
+props juga dapat dituliskan langsung sesuai atributnya.
+
 ### useState
 
 useState digunakan untuk menyimpan variabel yang sifat datanya berubah-ubah.
@@ -493,6 +509,36 @@ Setelah memiliki array, sekarang kita akan tampilkan data array tersebut menggun
 
 <img src="./gambar/17.png">
 
-### Penggunaan event onClick untuk men*hide* dan men-_show_ sebuah elemen
+### Penggunaan event onClick untuk men*hide* dan men-_show_ sebuah elemen (Conditional Rendering)
 
 <img src="./gambar/18.png">
+
+# Kamis, 27 Oktober 2022
+
+## Life Cycle
+
+Life cycle adalah siklus component.
+
+- mount -> ketika component muncul
+- update
+- unmount -> component hilang
+
+contoh:
+
+- mount -> mengklik tombol login, maka component page untuk login akan muncul
+- update -> ketika menginput password dan email pada form login
+- unmount -> mengklik menu lain pada navbar (misalnya menu about) sehingga component page login akan hilang (sebenarnya tidak literal hilang, namun akan berganti ke page about)
+
+<img src="./gambar/19.png">
+
+## Function Component vs Class Component
+
+Class component digunakan pada versi React JS yang terdahulu.
+
+<img src="./gambar/21.png">
+
+### Life cycle pada class component.
+
+<img src="./gambar/20.png">
+
+### Side Effect pada Life Cycle
