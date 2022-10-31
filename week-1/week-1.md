@@ -541,4 +541,14 @@ Class component digunakan pada versi React JS yang terdahulu.
 
 <img src="./gambar/20.png">
 
-### Side Effect pada Life Cycle
+### Side Effect pada Life Cycle menggunakan useEffect()
+
+import useEffect terlebih dahulu pada file jsx yang akan menggunakan useEffect
+
+```javascript
+import { useEffect } from "react";
+```
+
+menambahkan side effect
+
+<img src="./gambar/22.png">
