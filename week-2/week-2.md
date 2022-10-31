@@ -10,9 +10,17 @@ contoh: Pada parent tipe data propsnya adalah String, namun saat dilempar propsn
 
 contoh kasus: Terdapat file **App.jsx** sebagai parent, dan file **StudentInfo.jsx** sebagai childnya.
 
-<img src=".png"/>
+**StudentInfo.jsx**
 
-<img src=".png"/>
+<img src="./gambar/1.jpg"/>
+
+**App.jsx**
+
+<img src="./gambar/2.jpg"/>
+
+Maka hasilnya pada browser adalah :
+
+<img src="./gambar/3.jpg"/>
 
 ### Cara menggunakan prop-types
 
@@ -28,11 +36,11 @@ npm install prop-types
 import PropTypes from "prop-types";
 ```
 
-<img src=".png"/>
+<img src="./gambar/4.jpg"/>
 
-3. Tambahkan method proptypes pada function component.
+3. Tambahkan method propTypes pada function component.
 
-<img src=".png"/>
+<img src="./gambar/5.jpg"/>
 
 Setelah ada pesan eror, kita jadi mengetahui alasan eror dan dapat membenarkan letak kesalahannya.
 
@@ -50,7 +58,9 @@ props: PropTypes.any;
 
 ### .isRequired
 
-.isRequired digunakan utk memberi tahu bahwa harus ada data yang diinput pada props.
+.isRequired digunakan utk memberi tahu bahwa harus ada props yang didefinisikan prop-types.
+
+contoh: kita menambahkan prop-types untuk props dengan nama _info_ pada Child, namun ternyata pada Parent tidak ada props yang bernama _info_. Maka ketika kita menggunakan .isRequired akan dimunculkan pesan eror.
 
 ```javascript
 props: PropTypes.any.isRequired;
@@ -105,4 +115,26 @@ props: PropTypes.shape({
   properti1: PropTypes.string,
   properti1: PropTypes.number,
 });
+```
+
+### Mengecek nilai dan key dari sebuah Object dengan menggunakan _.exact_
+
+Apabila menggunakan .exact maka prop-types tidak hanya akan memeriksa tipe data dari properti object, namun juga jumlah keynya. Prop types akan memeriksa apakah key yang terdapat pada Parent sudah sesuai dengan key yang dicek pada Child.
+
+contoh: Pada Parent terdapat object dengan 3 properti (key), namun pada saat melakukan type checking pada Child properti (key) yang didefinisikan hanya 2. Dengan menggunakan _.exact_ akan mengecek hal ini. Apabila tidak sesuai maka akan memunculkan pesan eror.
+
+```javascript
+props: PropTypes.exact({
+  properti1: PropTypes.string,
+  properti1: PropTypes.number,
+});
+```
+
+### Menggabungkan .isRequired pada prop-types object
+
+```javascript
+props: PropTypes.exact({
+  properti1: PropTypes.string,
+  properti1: PropTypes.number,
+}).isRequired,
 ```
