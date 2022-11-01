@@ -44,10 +44,6 @@ import PropTypes from "prop-types";
 
 Setelah ada pesan eror, kita jadi mengetahui alasan eror dan dapat membenarkan letak kesalahannya.
 
-Di sini code **App.js** akan dibenarkan setelah mendapat pesan error.
-
-<img src=".png"/>
-
 ### Tipe data "_any_"
 
 Tipe data ini dapat menampung tipe data apa saja.
@@ -76,7 +72,7 @@ props: PropTypes.any.oneOfType([PropTypes.string, PropTypes.number]);
 
 pesan eror yang ditampilkan apabila tipe data yg diinput bukan string atau number
 
-<img src=".png"/>
+<img src="./gambar/6.jpg"/>
 
 ### PropTypes untuk tipe data Array
 
@@ -102,7 +98,9 @@ props: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number
 
 ### Prop-types untuk Tipe data Object
 
-<img src>
+<img src="./gambar/7.jpg"/>
+
+**info** memiliki tipe data object.
 
 ```javascript
 info: PropTypes.object;
@@ -138,3 +136,108 @@ props: PropTypes.exact({
   properti1: PropTypes.number,
 }).isRequired,
 ```
+
+# Selasa, 1 November 2022
+
+## Router
+
+Pada SPA, kita tetap bisa berpindah-pindah halaman dengan menggunakan **router**.
+
+<img src="./gambar/selasa-1.png"/>
+
+React Router yg akan digunakan adalah v6, disarankan untuk pemula.
+
+### Proses Instalasi
+
+Pada folder react yang dituju, ketik pada command prompt
+
+```
+npm install react-router-dom@6
+```
+
+### Proses pemasangan
+
+1. Pada main.jsx atau index.jsx import BrowserRouter
+
+```
+import { Broser Router } from react-router-dom
+```
+
+2. Pada main.jsx atau index.jsx bungkus <_App_/> dengan <_BrowserRouter_>
+
+<img src="./gambar/selasa-2.png"/>
+
+3. Pada **App.jsx**, import _Routes, Route_, dan _Link_
+
+```
+import {Routes, Route, Link} from 'react-router-dom'
+```
+
+Kemudian pada bagian return berikan pembungkus <_Routes_>
+
+<img src="./gambar/selasa-5.png"/>
+
+4. Membuat folder 'pages' di dalam folder 'src' untuk menampung file halaman
+
+<img src="./gambar/selasa-3.png"/>
+
+5. Buat HomePage.jsx dan AboutPage.jsx di dalam folder _page_
+
+<img src="./gambar/selasa-4.png"/>
+
+HomePage.jsx
+
+<img src="./gambar/selasa-7.png"/>
+
+6. Di dalam tag <_Routes_> panggil single tag <_Route_>
+
+<img src="./gambar/selasa-6.png"/>
+
+Tambahkan **path="/"** untuk menuliskan halaman yang pertama kali dirender (halaman pertama tempat user ketika pertama kali mengklik link website).
+
+**path** hanyalah masalah penulisan yang akan muncul pada link ketika halaman yang dipanggil dimuat.
+
+contohnya pada gambar ini, dapat disimpulkan **path**nya adalah **"/courses"**
+<img src="./gambar/selasa-1.png"/>
+
+Tambahkan juga **element={}** untuk memanggil page yang mau kita tuju. Di sini kita menjadikan HomePage.jsx sebagai halaman yang pertama kali dirender.
+
+Cara pemanggilan page **HomePage.jsx** sama seperti ketika kita memanggil component.
+
+<img src="./gambar/selasa-8.png"/>
+
+### Pemasangan Navbar
+
+Jika kita memiliki 4 page, dan kita ingin semua page tersebut memiliki navbar, maka kita dapat memasang navbar pada **App.jsx** tempat di mana kita akan memanggil 4 page tadi. Jadi tidak perlu memasangkan navbar satu-persatu untuk setiap 4 page tadi.
+
+Jika pada HTML biasa kita menggunakan tag <_a_>, pada penggunaan router kita akan gunakan <_Link_> dilengkapi dengan attribute **to**
+
+<img src="./gambar/selasa-9.png"/>
+
+### Params
+
+Params digunakan untuk mengirim data. Format penulisannya adalah "/:params"
+
+Contohnya di sini akan dibuat page DetailPage.jsx
+
+<img src="./gambar/selasa-10.jpg"/>
+
+Lalu pada **App.jsx** dipanggil halaman DetailPage. Kemudian di bagian **path**nya diberikan params berupa **id**
+
+<img src="./gambar/selasa-11.jpg"/>
+
+### useNavigate untuk **berpindah halaman** sekaligus melakukan **pengiriman data**
+
+Kelebihan: lebih mudah digunakan jika kita melakukan pengiriman data. Contohnya untuk halaman detail, (contoh pada Tokopedia) setiap barang jika diklik akan memiliki detailnya sendiri yang akan menampilkan deskripsi lengkap barang, review pembeli, button untuk menambah ke keranjang, dll. Untuk setiap detail.
+
+```javascript
+import { useNavigate } from "react-router-dom";
+```
+
+### useParams()
+
+```javascript
+import { useParams } from "react-router-dom";
+```
+
+### Nested Routing
