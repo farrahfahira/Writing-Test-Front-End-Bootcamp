@@ -193,14 +193,12 @@ HomePage.jsx
 
 <img src="./gambar/selasa-6.png"/>
 
-Tambahkan **path="/"** untuk menuliskan halaman yang pertama kali dirender (halaman pertama tempat user ketika pertama kali mengklik link website).
+**path** adalah penulisan yang akan muncul pada link ketika halaman yang dipanggil dimuat. Contohnya pada gambar ini, dapat disimpulkan **path**nya adalah **"/bundles"**
 
-**path** hanyalah masalah penulisan yang akan muncul pada link ketika halaman yang dipanggil dimuat.
-
-contohnya pada gambar ini, dapat disimpulkan **path**nya adalah **"/courses"**
+<br>
 <img src="./gambar/selasa-1.png"/>
 
-Tambahkan juga **element={}** untuk memanggil page yang mau kita tuju. Di sini kita menjadikan HomePage.jsx sebagai halaman yang pertama kali dirender.
+Tambahkan juga **element={}** untuk memanggil page yang mau kita tuju. Di sini kita menjadikan HomePage.jsx sebagai halaman yang pertama kali dirender. Oleh karena itu kita dapat mengisi **path="/"**
 
 Cara pemanggilan page **HomePage.jsx** sama seperti ketika kita memanggil component.
 
@@ -225,6 +223,8 @@ Contohnya di sini akan dibuat page DetailPage.jsx
 Lalu pada **App.jsx** dipanggil halaman DetailPage. Kemudian di bagian **path**nya diberikan params berupa **id**
 
 <img src="./gambar/selasa-11.jpg"/>
+
+<br>
 
 ### useNavigate untuk **berpindah halaman** sekaligus melakukan **pengiriman data**
 
