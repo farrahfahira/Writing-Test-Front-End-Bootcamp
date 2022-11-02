@@ -244,8 +244,90 @@ import { useParams } from "react-router-dom";
 
 ## Menyamakan Data Profile
 
-<img src="./gambar/rabu-1.jpg"/>
+<img src="./gambar/rabu-1.png"/>
 
 Data pada component Profile dan component Navbar sama. Caranya adalah meletakkan data pada **App.jsx**. Kemudian data dari **App.jsx** akan diberikan kepada component Navbar dan Profile.
 
-<img src="./gambar/rabu-2.jpg"/>
+<img src="./gambar/rabu-2.png"/>
+
+Pada component Navbar, dapat dipecah menjadi component-component yang lebih kecil lagi, yaitu component menu dan component user profile button.
+
+Sedangkan pada component halaman Profile dapat dipecah lagi menjadi component card profile user, user skillBadge, dan user skillPath.
+
+<img src="./gambar/rabu-3.png"/>
+
+### Proses pemberian data (Props Dealing)
+
+Props akan dilemparkan dari App ke Nav kemudian ke user profile button. Begitu juga dari Nav dilemparkan ke Profile baru kemudian ke user card.
+
+<img src="./gambar/rabu-4.png"/>
+
+Hal ini dimakan **Props dealing** (props akan dioper dari satu component ke component lainnya).
+
+Permasalahan yang mungkin timbul dari props dealing adalah
+
+Mengatasinya bisa dengan menggunakan **state management**.
+
+<img src="./gambar/rabu-5.png"/>
+
+## Redux
+
+Dari beberapa state management yang ada, kita akan mempelajari salah satunya yaitu **redux**.
+
+Sekarang kita akan membuat code untuk kasus seperti ini:
+
+Ketika kita menambahkan sebuah product ke keranjang, maka notifikasi angka pada logo keranjang di navbar akan bertambah.
+
+### Membuat component Counter, Keranjang, ListProduct, SummaryPembelian
+
+<img src="./gambar/rabu-6.png"/>
+
+### Menampilkan list product
+
+<img src="./gambar/rabu-9.png"/>
+
+**App.jsx**
+
+<img src="./gambar/rabu-7.png"/>
+
+Ketika dijalankan pada browser:
+
+<img src="./gambar/rabu-8.png"/>
+
+### Pemasangan redux
+
+Tahapannya:
+
+1. install redux
+2. Buat store
+3. Buat reducer
+4. Membuat provider
+5. Ambil data dari store
+
+- Instalasi redux pada folder projek react yang dituju
+
+```
+npm install redux react-redux
+```
+
+Setelah itu kita perlu membuat **store**. Store adalah wadah untuk menampung code props yang akan dibagi-bagi datanya untuk banyak component. Di dalam store bisa terdapat beberapa reducer.
+
+Analoginya:
+
+<img src="./gambar/rabu-12.png"/>
+
+- Membuat folder baru bernama **redux**, kemudian buat folder **store** di dalamnya, lalu buat file **index.js** di dalamnya
+
+<img src="./gambar/rabu-10.png"/>
+
+- Membuat folder **reducer** di dalam folder **redux**, kemudian membuat file **keranjangReducer.js**
+
+<img src="./gambar/rabu-11.png"/>
+
+- Mmebuat provider untuk memberitahu kepada seluruh component bahwa store untuk menampung data sudah tersedia
+
+**main.jsx**
+
+<img src="./gambar/rabu-13.png"/>
+
+- Mengambil data dari store dengan menggunakan **useSelector**
