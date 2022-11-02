@@ -317,7 +317,7 @@ Tahapannya:
 - Instalasi redux pada folder projek react yang dituju
 
   ```
-  npm install redux react-redux
+  npm install react-redux
   ```
 
 Setelah itu kita perlu membuat **store**. Store adalah wadah untuk menampung code props yang akan dibagi-bagi datanya untuk banyak component. Di dalam store bisa terdapat beberapa reducer.
