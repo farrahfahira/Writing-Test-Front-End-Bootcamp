@@ -226,13 +226,57 @@ Lalu pada **App.jsx** dipanggil halaman DetailPage. Kemudian di bagian **path**n
 
 <br>
 
-### useNavigate untuk **berpindah halaman** sekaligus melakukan **pengiriman data**
+Alurnya adalah pada Home Page akan menampilkan list nama-nama siswa, yang mana setiap siswa memiliki halaman detilnya masing-masing. User akan diarahkan ke halaman detil seorang siswa apabila button **Detail** nya diklik. Halaman detil setiap siswa masih akan tetap memiliki navbar yang sudah ada.
 
-Kelebihan: lebih mudah digunakan jika kita melakukan pengiriman data. Contohnya untuk halaman detail, (contoh pada Tokopedia) setiap barang jika diklik akan memiliki detailnya sendiri yang akan menampilkan deskripsi lengkap barang, review pembeli, button untuk menambah ke keranjang, dll. Untuk setiap detail.
+Perhatikan ilustrasi di bawah ini.
 
-```javascript
-import { useNavigate } from "react-router-dom";
-```
+<img src="./gambar/selasa-12.jpg"/>
+
+Cara agar menampilkan list nama siswa pada Home Page adalah sebagai berikut :
+
+- Pada **HomePage.jsx** dibuat array of object.
+
+  <img src="./gambar/selasa-13.jpg"/>
+
+- Kemudian data ditampilkan dengan method .map()
+
+  <img src="./gambar/selasa-14.jpg"/>
+
+- Kemudian tambahkan event onClick pada button
+
+  ```javascript
+  <button onClick={() => handleDetail(el.id)}>Detail</button>
+  ```
+
+- Kemudian membuat function handleDetail yang memiliki parameter _id_
+
+  ```javascript
+  const handleDetail = (id) => {};
+  ```
+
+  ### useNavigate untuk **berpindah halaman** sekaligus melakukan **pengiriman data**
+
+  Kelebihan: lebih mudah digunakan jika kita melakukan pengiriman data. Contohnya untuk halaman detail, (contoh pada Tokopedia) setiap barang jika diklik akan memiliki detailnya sendiri yang akan menampilkan deskripsi lengkap barang, review pembeli, button untuk menambah ke keranjang, dll. Untuk setiap detail.
+
+  - import useNavigate pada **HomePage.jsx**
+
+    ```javascript
+    import { useNavigate } from "react-router-dom";
+    ```
+
+  - menampung useNavigate ke dalam sebuah variabel
+
+    ```javascript
+    const navigation = useNavigate();
+    ```
+
+  - menggunakan **navigation** ke dalam function handeDetail
+
+    ```javascript
+    const handleDetail = (id) => {
+      navigation(`/detail/${id} `);
+    };
+    ```
 
 ### useParams()
 
