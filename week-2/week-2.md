@@ -248,41 +248,57 @@ Cara agar menampilkan list nama siswa pada Home Page adalah sebagai berikut :
   <button onClick={() => handleDetail(el.id)}>Detail</button>
   ```
 
-- Kemudian membuat function handleDetail yang memiliki parameter _id_
+Cara agar button **Detail** berfungsi dan akan membawa user ke halaman detil siswa
+
+- Membuat function handleDetail yang memiliki parameter _id_
 
   ```javascript
   const handleDetail = (id) => {};
   ```
 
+- import useNavigate pada **HomePage.jsx**
+
   ### useNavigate untuk **berpindah halaman** sekaligus melakukan **pengiriman data**
 
   Kelebihan: lebih mudah digunakan jika kita melakukan pengiriman data. Contohnya untuk halaman detail, (contoh pada Tokopedia) setiap barang jika diklik akan memiliki detailnya sendiri yang akan menampilkan deskripsi lengkap barang, review pembeli, button untuk menambah ke keranjang, dll. Untuk setiap detail.
 
-  - import useNavigate pada **HomePage.jsx**
+  ```javascript
+  import { useNavigate } from "react-router-dom";
+  ```
+
+- menampung useNavigate ke dalam sebuah variabel
+
+  ```javascript
+  const navigation = useNavigate();
+  ```
+
+- menggunakan **navigation** ke dalam function handeDetail
+
+  ```javascript
+  const handleDetail = (id) => {
+    navigation(`/detail/${id} `);
+  };
+  ```
+
+Berikutnya adalah membuat halaman detil menampilkan info setiap siswa. Misalkan setiap siswa memiliki info name, address, dan hobby.
+
+- Pada **DetailPage.jsx** dibuat array of object yang memuat data _name, address,_ dan _hobby_ dari siswa.
+
+<img src="./gambar/selasa-15.png"/>
+
+- Mengirim data menggunakan useParams()
+
+  ### useParams()
+
+  ```javascript
+  import { useParams } from "react-router-dom";
+  ```
+
+  - Membuat variabel untuk menampung useParams()
 
     ```javascript
-    import { useNavigate } from "react-router-dom";
+    const { id } = useParams();
     ```
-
-  - menampung useNavigate ke dalam sebuah variabel
-
-    ```javascript
-    const navigation = useNavigate();
-    ```
-
-  - menggunakan **navigation** ke dalam function handeDetail
-
-    ```javascript
-    const handleDetail = (id) => {
-      navigation(`/detail/${id} `);
-    };
-    ```
-
-### useParams()
-
-```javascript
-import { useParams } from "react-router-dom";
-```
 
 # Rabu, 2 November 2022
 
