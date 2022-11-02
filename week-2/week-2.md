@@ -160,7 +160,7 @@ npm install react-router-dom@6
 1. Pada main.jsx atau index.jsx import BrowserRouter
 
 ```
-import { Broser Router } from react-router-dom
+import { Browser Router } from react-router-dom
 ```
 
 2. Pada main.jsx atau index.jsx bungkus <_App_/> dengan <_BrowserRouter_>
@@ -240,4 +240,12 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 ```
 
-### Nested Routing
+# Rabu, 2 November 2022
+
+## Menyamakan Data Profile
+
+<img src="./gambar/rabu-1.jpg"/>
+
+Data pada component Profile dan component Navbar sama. Caranya adalah meletakkan data pada **App.jsx**. Kemudian data dari **App.jsx** akan diberikan kepada component Navbar dan Profile.
+
+<img src="./gambar/rabu-2.jpg"/>
