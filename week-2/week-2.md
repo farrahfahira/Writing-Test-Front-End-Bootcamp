@@ -304,7 +304,7 @@ Ketika dijalankan pada browser:
 
 <img src="./gambar/rabu-8.png"/>
 
-### **Pemasangan redux**
+## **Pemasangan redux**
 
 Tahapannya:
 
@@ -353,3 +353,23 @@ Analoginya:
   <img src="./gambar/rabu-14.png"/>
 
   useSelector akan mengambil data state dari store. Store akan menyediakan reducer yang bernama KeranjangReducer. Sehingga component Keranjang.jsx akan mengambil data dari KeranjangReducer.
+
+## Action
+
+- Membuat folder action pada folder redux
+
+  <img src="./gambar/rabu-15.png"/>
+
+- keranjangAction.js
+
+<img src="./gambar/rabu-17.png"/>
+
+- pada keranjangReducer.js, diimport objek INCREMENT_KERANJANG dan DECREMENT_KERANJANG
+
+<img src="./gambar/rabu-.png"/>
+
+- pada component Counter, gunakan **useDispatch**
+
+Dispatch gunanya adalah **mengirim action ke dalam reducer**.
+
+<img src="./gambar/rabu-16.png"/>
