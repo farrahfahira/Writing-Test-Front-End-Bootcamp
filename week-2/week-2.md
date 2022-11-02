@@ -316,9 +316,9 @@ Tahapannya:
 
 - Instalasi redux pada folder projek react yang dituju
 
-```
-npm install redux react-redux
-```
+  ```
+  npm install redux react-redux
+  ```
 
 Setelah itu kita perlu membuat **store**. Store adalah wadah untuk menampung code props yang akan dibagi-bagi datanya untuk banyak component. Di dalam store bisa terdapat beberapa reducer.
 
@@ -328,22 +328,28 @@ Analoginya:
 
 - Membuat folder baru bernama **redux**, kemudian buat folder **store** di dalamnya, lalu buat file **index.js** di dalamnya
 
-<img src="./gambar/rabu-10.png"/>
+  <img src="./gambar/rabu-10.png"/>
 
 - Membuat folder **reducer** di dalam folder **redux**, kemudian membuat file **keranjangReducer.js**
 
-<img src="./gambar/rabu-11.png"/>
+  <img src="./gambar/rabu-11.png"/>
 
 - Membuat provider
 
-Provider seperti memberi jangkauan kepada component apa saja store dapat diakses.
+  Provider seperti memberi jangkauan kepada component apa saja store dapat diakses.
 
-<img src="./gambar/provider.png"/>
+  <img src="./gambar/provider.png"/>
 
-Karena **App** adalah component utama yang merupakan jalan masuk untuk seluruh component yang akan dibuat (atau dapat dikatakan App sebagai parent), maka kita hanya perlu membungkus App dengan provider. Component **App** dipanggil pada **main.jsx**, maka kita perlu memasangkan provider pada **main.jsx**.
+  Karena **App** adalah component utama yang merupakan jalan masuk untuk seluruh component yang akan dibuat (atau dapat dikatakan App sebagai parent), maka kita hanya perlu membungkus App dengan provider. Component **App** dipanggil pada **main.jsx**, maka kita perlu memasangkan provider pada **main.jsx**.
 
-**main.jsx**
+  **main.jsx**
 
-<img src="./gambar/rabu-13.png"/>
+  <img src="./gambar/rabu-13.png"/>
+
+  <br>
 
 - Mengambil data dari store dengan menggunakan **useSelector**
+
+  <img src="./gambar/rabu-14.png"/>
+
+  useSelector akan mengambil data state dari store. Store akan menyediakan reducer yang bernama KeranjangReducer. Sehingga component Keranjang.jsx akan mengambil data dari KeranjangReducer.
