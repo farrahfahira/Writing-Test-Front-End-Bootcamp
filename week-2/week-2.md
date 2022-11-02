@@ -246,13 +246,21 @@ import { useParams } from "react-router-dom";
 
 <img src="./gambar/rabu-1.png"/>
 
-Data pada component Profile dan component Navbar sama. Caranya adalah meletakkan data pada **App.jsx**. Kemudian data dari **App.jsx** akan diberikan kepada component Navbar dan Profile.
+Data pada component Profile dan component Navbar sama, yaitu sama-sama menampilkan foto profil dari user dan menampilkan nama lengkap user. Bagaimana cara membuat data pada kedua component ini sama?
+
+Caranya adalah dengan meletakkan data pada **App.jsx**. Sehingga nantinya data dari **App.jsx** akan diberikan kepada component Navbar dan Profile. Untuk analoginya, perhatikan gambar di bawah.
 
 <img src="./gambar/rabu-2.png"/>
+
+<br>
+
+Component Nav dan component Profile terbagi menjadi component-component yang lebih kecil lagi.
 
 Pada component Navbar, dapat dipecah menjadi component-component yang lebih kecil lagi, yaitu component menu dan component user profile button.
 
 Sedangkan pada component halaman Profile dapat dipecah lagi menjadi component card profile user, user skillBadge, dan user skillPath.
+
+<br>
 
 <img src="./gambar/rabu-3.png"/>
 
@@ -278,7 +286,9 @@ Sekarang kita akan membuat code untuk kasus seperti ini:
 
 Ketika kita menambahkan sebuah product ke keranjang, maka notifikasi angka pada logo keranjang di navbar akan bertambah.
 
-### Membuat component Counter, Keranjang, ListProduct, SummaryPembelian
+### **Membuat component Counter, Keranjang, ListProduct, SummaryPembelian**
+
+<br>
 
 <img src="./gambar/rabu-6.png"/>
 
@@ -294,11 +304,11 @@ Ketika dijalankan pada browser:
 
 <img src="./gambar/rabu-8.png"/>
 
-### Pemasangan redux
+### **Pemasangan redux**
 
 Tahapannya:
 
-1. install redux
+1. Install redux
 2. Buat store
 3. Buat reducer
 4. Membuat provider
@@ -324,7 +334,13 @@ Analoginya:
 
 <img src="./gambar/rabu-11.png"/>
 
-- Mmebuat provider untuk memberitahu kepada seluruh component bahwa store untuk menampung data sudah tersedia
+- Membuat provider
+
+Provider seperti memberi jangkauan kepada component apa saja store dapat diakses.
+
+<img src="./gambar/provider.png"/>
+
+Karena **App** adalah component utama yang merupakan jalan masuk untuk seluruh component yang akan dibuat (atau dapat dikatakan App sebagai parent), maka kita hanya perlu membungkus App dengan provider. Component **App** dipanggil pada **main.jsx**, maka kita perlu memasangkan provider pada **main.jsx**.
 
 **main.jsx**
 
