@@ -164,6 +164,15 @@ function Home() {
   // tag kosong dapat digunakan sebagai parent element pada return untuk membungkus seluruh element-element lainnya di dalamnya.
   <></>;
 }
+
+//export Home agar bisa diimport ke App
+export default Home;
+```
+
+Pada **App.jsx** import Home
+
+```javascript
+import Home from "./components/Home";
 ```
 
 Contoh di atas adalah penulisan function yang benar.

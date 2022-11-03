@@ -300,6 +300,28 @@ Berikutnya adalah membuat halaman detil menampilkan info setiap siswa. Misalkan 
     const { id } = useParams();
     ```
 
+- Pada **return** di **DetailPage.jsx** hanya akan menampilkan data detil siswa yang tombol Detailnya diklik (yg idnya sesuai)
+
+<img src="./gambar/selasa-16.png"/>
+
+## Nested Routing
+
+Nested routing akan terlihat seperti ini
+
+<img src="./gambar/selasa-17.png"/>
+
+Di laman _about_ akan ada button yang mengarahkan ke laman lain lagi, yaitu laman _school_.
+
+Mengapa nested routing diperlukan? Jawabannya adalah agar kita tidak perlu membuat routing yang seperti ini:
+
+<img src="./gambar/selasa-18.png"/>
+
+Akan ada banyak routing yang kita buat. Dengan adanya nested routing, kita akan membuat nested route secara otomatis (tidak perlu dituliskan satu-persatu seperti pada contoh gambar di atas).
+
+Kita akan belajar cara membuatnya.
+
+Di sini kita sudah memiliki laman About. Sekarang kita akan buat laman **AboutStudent.jsx** dan laman **AboutTeacher.jsx**
+
 # Rabu, 2 November 2022
 
 ## Menyamakan Data Profile
@@ -369,15 +391,15 @@ Ketika dijalankan pada browser:
 Tahapannya:
 
 1. Install redux
-2. Buat store
-3. Buat reducer
+2. Buat folder **redux**
+3. Di dalam folder redux, buat folder **action**, **reducer**, dan **store**
 4. Membuat provider
 5. Ambil data dari store
 
 - Instalasi redux pada folder projek react yang dituju
 
   ```
-  npm install react-redux
+  npm install redux react-redux
   ```
 
 Setelah itu kita perlu membuat **store**. Store adalah wadah untuk menampung code props yang akan dibagi-bagi datanya untuk banyak component. Di dalam store bisa terdapat beberapa reducer.
@@ -416,6 +438,8 @@ Analoginya:
 
 ## Action
 
+note: pada action jangan lupa untuk memberi keyword _export_ untuk variabel dan function yang berada di dalam file action.
+
 - Membuat folder action pada folder redux
 
   <img src="./gambar/rabu-15.png"/>
@@ -426,10 +450,39 @@ Analoginya:
 
 - pada keranjangReducer.js, diimport objek INCREMENT_KERANJANG dan DECREMENT_KERANJANG
 
-<img src="./gambar/rabu-.png"/>
-
 - pada component Counter, gunakan **useDispatch**
 
 Dispatch gunanya adalah **mengirim action ke dalam reducer**.
 
 <img src="./gambar/rabu-16.png"/>
+
+<br>
+
+# Kamis, 03 November 2022
+
+**Combined Reducer** -> digunakan ketika kita memiliki lebih dari satu reducer yang ingin dimasukkan ke dalam store.
+
+Contoh pada kasus ini store sudah menampung counterReducer. Sedangkan kita membuat reducer baru, yaitu todoReducer.
+
+Karena sekarang sudah ada lebih dari 1 reducer yang perlu disimpan pada store, maka digunakan combine Reducer.
+
+before:
+
+```javascript
+import { createReducer } from "redux";
+
+const store = createReducer(counterReducer);
+```
+
+after:
+
+```javascript
+import { combineReducer, createReducer } from "redux";
+
+const allReducer = combineReducer({
+  counter: counterReducer,
+  todo: todoReducer,
+});
+
+const store = createReducer(allReducer);
+```
