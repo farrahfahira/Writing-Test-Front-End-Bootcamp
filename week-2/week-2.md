@@ -491,4 +491,50 @@ const allReducer = combineReducer({
 const store = createReducer(allReducer);
 ```
 
+Rangkuman:
+
+store.js (tempat membuat store):
+
+- import createStore, combineReducers
+- buat variabel allReducer yang diisi dengan combineReducers dan masukkin list reducernya apa-apa aja
+- buat store pake createStore, dengan parameternya (allReducer)
+- export store
+
+reducer:
+
+- definisiin intialState (untuk simpan data)
+- buat fungsi reducernya (samakan nama function dengan nama file)
+- parameter function reducer adalah (state - initialState, action)
+- di dalam function reducer ada switch case
+- export reducer
+
+setelah itu balik lagi ke file store.js
+
+- import file reducer yang mau dipake
+- masukkin nama reducernya ke dalam combineReducers
+
+provider (taruh di file index.js atau main.jsx, pokoknya tempat virtual DOM dibuat):
+
+- import Provider
+- import store
+- bungkus App dengan tag **Provider**
+- berikan properti **store={store}** pada opening tag Provider
+
+useSelector pada component yg dituju:
+
+- import useSelector
+- buat variable state yang diisi dengan **useSelector** yang akan mengambil properti dari reducer yang dituju
+
 # Jumat, 04 November 2022
+
+## Menggunakan redux yang mengambil data dari mock API
+
+- memberikan properti **isLoading** dan **err** pada initialState di file reducer.
+
+<img src="./gambar/jumat-1.png"/>
+
+- membuat action yg mengambil data dari API menggunakan **thunk**
+
+## Thunk
+
+dispatch(action) tidak bisa melakukan proses asynchronous, oleh karena itu dibutuhkan thunk apabila ingin membuat action yang mengambil data dari reducer yang menggunakan API. Thunk adalah middleware yang digunakan untuk membuat function yang bersifat asynchronous.
