@@ -537,4 +537,4 @@ useSelector pada component yg dituju:
 
 ## Thunk
 
-dispatch(action) tidak bisa melakukan proses asynchronous, oleh karena itu dibutuhkan thunk apabila ingin membuat action yang mengambil data dari reducer yang menggunakan API. Thunk adalah middleware yang digunakan untuk membuat function yang bersifat asynchronous.
+dispatch(action) tidak bisa melakukan proses asynchronous, oleh karena itu dibutuhkan thunk apabila ingin membuat action yang mengambil data dari reducer yang menggunakan API. **Thunk** adalah **middleware** yang digunakan untuk **membuat function yang bersifat asynchronous**.
