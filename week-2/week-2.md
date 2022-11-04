@@ -230,17 +230,17 @@ Alurnya adalah pada Home Page akan menampilkan list nama-nama siswa, yang mana s
 
 Perhatikan ilustrasi di bawah ini.
 
-<img src="./gambar/selasa-12.jpg"/>
+<img src="./gambar/selasa-12.png"/>
 
 Cara agar menampilkan list nama siswa pada Home Page adalah sebagai berikut :
 
 - Pada **HomePage.jsx** dibuat array of object.
 
-  <img src="./gambar/selasa-13.jpg"/>
+  <img src="./gambar/selasa-13.png"/>
 
 - Kemudian data ditampilkan dengan method .map()
 
-  <img src="./gambar/selasa-14.jpg"/>
+  <img src="./gambar/selasa-14.png"/>
 
 - Kemudian tambahkan event onClick pada button
 
@@ -312,15 +312,19 @@ Nested routing akan terlihat seperti ini
 
 Di laman _about_ akan ada button yang mengarahkan ke laman lain lagi, yaitu laman _school_.
 
-Mengapa nested routing diperlukan? Jawabannya adalah agar kita tidak perlu membuat routing yang seperti ini:
+1. Laman yang memiliki child akan dibungkus oleh tag _Route_ yang memiliki closing tag.
+
+before :
 
 <img src="./gambar/selasa-18.png"/>
 
-Akan ada banyak routing yang kita buat. Dengan adanya nested routing, kita akan membuat nested route secara otomatis (tidak perlu dituliskan satu-persatu seperti pada contoh gambar di atas).
+after:
 
-Kita akan belajar cara membuatnya.
+<img src="./gambar/selasa-19.png"/>
 
-Di sini kita sudah memiliki laman About. Sekarang kita akan buat laman **AboutStudent.jsx** dan laman **AboutTeacher.jsx**
+2. Link pada laman About
+
+<img src="./gambar/selasa-20.png"/>
 
 # Rabu, 2 November 2022
 
@@ -486,3 +490,5 @@ const allReducer = combineReducer({
 
 const store = createReducer(allReducer);
 ```
+
+# Jumat, 04 November 2022
