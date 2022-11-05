@@ -525,16 +525,42 @@ useSelector pada component yg dituju:
 - import useSelector
 - buat variable state yang diisi dengan **useSelector** yang akan mengambil properti dari reducer yang dituju
 
+<br>
+
 # Jumat, 04 November 2022
 
 ## Menggunakan redux yang mengambil data dari mock API
 
 - memberikan properti **isLoading** dan **err** pada initialState di file reducer.
 
-<img src="./gambar/jumat-1.png"/>
+  <img src="./gambar/jumat-1.png"/>
 
 - membuat action yg mengambil data dari API menggunakan **thunk**
 
 ## Thunk
 
-dispatch(action) tidak bisa melakukan proses asynchronous, oleh karena itu dibutuhkan thunk apabila ingin membuat action yang mengambil data dari reducer yang menggunakan API. **Thunk** adalah **middleware** yang digunakan untuk **membuat function yang bersifat asynchronous**.
+dispatch(action) tidak bisa melakukan proses asynchronous, oleh karena itu **dibutuhkan thunk** apabila ingin membuat action yang mengambil data dari reducer yang menggunakan API. **Thunk** adalah **middleware** yang digunakan untuk **membuat function yang bersifat asynchronous**.
+
+### instalasi thunk
+
+```
+npm install redux-thunk
+```
+
+### import applyMiddleware dan thunk pada file store
+
+### tambahkan parameter applyMiddleware(thunk) pada createStore
+
+### membuat function asynchronous pada action
+
+function action akan mereturn sebuah function async
+
+<img src="./gambar/jumat-2.png"/>
+
+di dalam function async berisi:
+
+- dispatch yg akan mengubah isLoading menjadi _true_
+- ambil data dari API menggunakan axios
+- dispatch untuk mengirim data dari API ke dalam reducer
+
+<img src="./gambar/jumat-3.png"/>
