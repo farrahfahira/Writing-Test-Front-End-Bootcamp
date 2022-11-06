@@ -550,14 +550,72 @@ Class component digunakan pada versi React JS yang terdahulu.
 
 <img src="./gambar/20.png">
 
+Hooks
+
+1. useState
+2. useEffect
+
 ### Side Effect pada Life Cycle menggunakan useEffect()
 
-import useEffect terlebih dahulu pada file jsx yang akan menggunakan useEffect
+useEffect() berguna untuk memberikan efek samping pada proses Life Cycle. Contohnya pada saat mounting (component muncul di layar) maka kita dapat menambahkan sebuah efek samping. Atau pada saat update, efek samping tersebut juga akan muncul.
+
+- import useEffect terlebih dahulu pada file jsx yang akan menggunakan useEffect
+
+  ```javascript
+  import { useEffect } from "react";
+  ```
+
+- menambahkan function useEffect() pada component yang diinginkan
+
+function useEffect diletakkan sebelum return.
+
+- menerapkan function useEffect() hanya sekali saja (yaitu pada saat mounting)
 
 ```javascript
-import { useEffect } from "react";
+useEffect(() => {
+  //code
+}, []); // menambahkan []
 ```
 
-menambahkan side effect
+<br>
 
-<img src="./gambar/22.png">
+# Jumat, 28 Oktober 2022
+
+Hari ini saya mengikuti Live Class seperti biasa di jam 7-9.30 pagi. Materi kali ini dipandu oleh Kak Dilla. Saya belajar cara membuat FORM menggunakan React JS.
+
+## Menginput data melalui FORM pada React JS
+
+- membuat component Form
+
+  <img src="./gambar/23.png">
+
+- membuat tag form di dalam return
+
+  <img src="./gambar/24.png">
+
+- atribut htmlFor
+
+  Pada HTML, saat membuat atribut **for** pada tag <_label_> di React ada sedikit perbedaan dalam penulisannya.
+
+  <img src="./gambar/25.png">
+
+- menampung data menggunakan state
+
+  Kita akan menampung inputan _name_ user pada state
+
+  - import useState
+  - buat state untuk name dan address
+    <img src="./gambar/26.png">
+  - menangkap inputan user menggunakan **value** dan **onChange**
+    <img src="./gambar/27.png">
+
+- mengirim data setelah button submit ditekan
+
+  Pada React, mengirim data menggunakan function onSubmit. onSubmit diletakkan di dalam opening tag form. Syaratnya adalah memasukkan type='submit' pada button.
+
+  <img src="./gambar/28.png">
+
+- membuat function handleSubmit
+  <img src="./gambar/28.png">
+
+- mereset inputan user apabila sudah submit
