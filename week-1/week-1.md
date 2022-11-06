@@ -617,5 +617,3 @@ Hari ini saya mengikuti Live Class seperti biasa di jam 7-9.30 pagi. Materi kali
 
 - membuat function handleSubmit
   <img src="./gambar/28.png">
-
-- mereset inputan user apabila sudah submit
