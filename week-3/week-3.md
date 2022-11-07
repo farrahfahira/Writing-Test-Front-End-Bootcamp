@@ -55,28 +55,10 @@ Maka dari itu, akan dibuat sebuah component context bernama **KeranjangCountProv
    <img src="./gambar/senin-11.png"/>
 
 8. Panggil component context di dalam main.jsx / index.js
-
-<img src="./gambar/senin-12.png"/>
+   <img src="./gambar/senin-12.png"/>
 
 ---
 
-<img src="./gambar/senin-1.png"/>
-<img src="./gambar/senin-2.png"/>
+### Menggunakan props yang sudah disediakan pada component context menggunakan useContext
 
-### proses membuat context
-
-1. membuat file context
-
-contoh: LevelContext.js
-
-2. Mengimport context pada file LevelContext.js
-
-```javascript
-import { createContext } from "react";
-```
-
-3. Membuat props yang akan diisi oleh createContext()
-
-```javascript
-export const LevelContext = createContext(1);
-```
+<img src="./gambar/senin-13.png"/>
