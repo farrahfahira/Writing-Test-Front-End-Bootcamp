@@ -62,3 +62,42 @@ Maka dari itu, akan dibuat sebuah component context bernama **KeranjangCountProv
 ### Menggunakan props yang sudah disediakan pada component context menggunakan useContext
 
 <img src="./gambar/senin-13.png"/>
+
+# Selasa, 08 November 2022
+
+## Menggunakan useReducer
+
+# Rabu, 09 November 2022
+
+## React Testing
+
+Testing bisa dilakukan secara manual (manual testing) dan secara otomatis (automated testing).
+
+Automated testing terbagi 3:
+
+- unit test -> test unit paling kecil, misalnya function.
+- integration test -> testing apakah aplikasi sudah terhubung dengan sistem yang lain (cth: database)
+- end-to-end test -> testing dari sudut pandang user
+
+<img src="./gambar/rabu-1.png"/>
+
+Cara menulis testing ada 2:
+
+- membuat fitur terlebih dahulu, baru menulis code testing
+- membuat code testing, baru membuat fitur (TDD)
+
+### TDD circle
+
+<img src="./gambar/rabu-2.png"/>
+
+## Unit Testing
+
+<img src="./gambar/rabu-3.png"/>
+
+<img src="./gambar/rabu-4.png"/>
+
+### React Testing Library (RTL)
+
+RTL menggunakan depedencies @testing-library yang sudah terinstall ketika membuat react app.
+
+<img src="./gambar/rabu-5.png"/>
