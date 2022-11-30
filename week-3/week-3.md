@@ -67,6 +67,36 @@ Maka dari itu, akan dibuat sebuah component context bernama **KeranjangCountProv
 
 ## Menggunakan useReducer
 
+- Permasalahan<br>
+  jika nanti mempunyai aplikasi yang sudah besar dan masih memparsing data menggunakan props, akan kecapean kedepannya ketika sudah mempuyai banyak data dan komponen.
+
+- Langkah-langkah<br>
+
+  - Install react<br>
+    Cukup membuka terminal / CMD dan jalankan perintah berikut:
+    ```js
+    npm i -g create-react-app
+    ```
+  - Membuat react project<br>
+    ```js
+    npx create-react-app nama-project
+    ```
+    Lalu open text editor.
+  - Membuat context<br>
+
+    ```js
+    import { createContext } from "react";
+
+    export default createContext();
+    ```
+
+  - Membuat types<br>
+    Types ini berfungsi untuk mendefinisikan apa saja yang akan dilakukan oleh aplikasi.
+  - Membuat reducer<br>
+    Reducer di ReactJS berfungsi untuk menentukan state-state yang akan berubah di dalam aplikasi kita. Untuk kasus ini, jika kamu ingin mengubah state-state, maka kamu harus mengkontrol semuanya di sini.
+  - Membuat state<br>
+    Di langkah ini, ini adalah akar dari si Context ini. Di dalam file ini akan berisikan state-state, fungsi-fungsi, dan beberapa nilai yang akan digunakan oleh si komponen nantinya. Di sinilah kita membuat macam halnya seperti variable global dengan context, berikut kodenya. State ini digunakan untuk mendeklarasikan state-state yang akan kita gunakan, fungsi-fungsi yang beritenraksi dengan server, dan beberapa logic untuk aplikasi ini. Jika ingin menambahkan fungsi maka dapat ditambahkan di sini dan jangan membuat fungsi yang berinteraksi dengan server di komponen.
+
 # Rabu, 09 November 2022
 
 ## React Testing
